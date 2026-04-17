@@ -113,12 +113,65 @@ curl http://trubytes.work.gd
 curl http://trubytes.work.gd/health
 curl http://trubytes.work.gd/me
 
-##PHASE 4: Make Service Persistent ##
+**PHASE 4: Make Service Persistent  **
+1. Create systemd service
+sudo nano /etc/systemd/system/api.service
+
+2. Add
+[Unit]
+Description=FastAPI App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/stage1-api
+ExecStart=/usr/bin/uvicorn main:app --host 127.0.0.1 --port 8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+3. Enable service
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl start api
+sudo systemctl enable api
+
+4. Verify
+sudo systemctl status api
+
 ## Live API
 Base URL: https://trubytes.work.gd
 
----
-
-## 📡 API Endpoints
+##  API Endpoints
+/
+/health
+/me
 
 ### 1. Root Endpoint
+https://trubytes.work.gd
+
+** 🏗️ Architecture **
+Internet → Nginx (80/443) → Reverse Proxy → FastAPI (127.0.0.1:8000) → systemd
+
+** 🔒 Key Features **
+HTTPS enabled (Let's Encrypt)
+HTTP → HTTPS redirect (301)
+Reverse proxy (Nginx)
+Background service management (systemd)
+Secure internal app binding (127.0.0.1)
+Fast response time (<500ms)
+
+**📦 Deployment Summary **
+Cloud Provider: AWS EC2 (Ubuntu)
+Web Server: Nginx
+Backend: FastAPI (Uvicorn)
+Process Manager: systemd
+Domain: trubytes.work.gd
+
+
+
+
+
+
