@@ -113,7 +113,7 @@ curl http://trubytes.work.gd
 curl http://trubytes.work.gd/health
 curl http://trubytes.work.gd/me
 
-**PHASE 4: Make Service Persistent **
+##PHASE 4: Make Service Persistent ##
 ## Live API
 Base URL: https://trubytes.work.gd
 
