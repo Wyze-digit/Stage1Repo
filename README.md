@@ -1,7 +1,7 @@
 # Stage1Repo
-HNG14 DEVOPS Challenge program. Stage1 challenge for building api  
+# HNG14 DEVOPS Challenge program. Stage1 challenge for building api  
 
-# Production-Ready FastAPI Deployment with Nginx Reverse Proxy (AWS EC2)
+# FastAPI Deployment with Nginx Reverse Proxy (AWS EC2)
 
 ## Project Overview
 This project demonstrates a production-ready deployment of a FastAPI application using:
