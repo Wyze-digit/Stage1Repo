@@ -36,9 +36,9 @@ GET /health
 Endpoint 3
 GET /me
 {
- "name": "Your Full Name",
- "email": "you@example.com",
- "github": "https://github.com/yourusername"
+ "name": "IFIOK EMMANUEL",
+ "email": "ifiokbassey.e@gmail.com",
+ "github": "https://github.com/Wyze-digit"
 }
 
 **Strict API Rules**
@@ -76,7 +76,7 @@ def me():
    return JSONResponse(content={
        "name": "IFIOK EMMANUEL",
        "email": "ifiokbassey.e@gmail.com",
-       "github": "https://github.com/YOUR_USERNAME"
+       "github": "https://github.com/Wyze-digit"
    }, status_code=200)
 
 **PHASE 2: Deploy on Server**
