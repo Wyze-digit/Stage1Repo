@@ -87,7 +87,7 @@ scp -i hng-key.pem -r stage1-api ubuntu@server_ip_address:~
 cd stage1-api
 uvicorn main:app --host 127.0.0.1 --port 8000
 
-PHASE 3: Configure Nginx Reverse Proxy
+**PHASE 3: Configure Nginx Reverse Proxy**
 1. Edit Nginx config
 sudo nano /etc/nginx/sites-enabled/default
 
